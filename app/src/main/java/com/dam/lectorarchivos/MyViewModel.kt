@@ -42,9 +42,10 @@ class MyViewModel(): ViewModel() {
 
     fun sumaNumero(numero: Int){
         Log.d("ViewModel","Actualizando el numero")
-        for(n in numero..100 step 10)
-        _progresoFlow.value = numero
-        _estadoFlow.value = Estados.CARGANDO
+        for(n in numero..100 step 10) {
+            _progresoFlow.value = numero
+            _estadoFlow.value = Estados.CARGANDO
+        }
     }
 
 }
