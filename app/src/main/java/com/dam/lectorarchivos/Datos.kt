@@ -11,3 +11,13 @@ enum class Estados(val start_activo: Boolean, val boton_activo: Boolean) {
 enum class Colores(val color: Color, val txt: String) {
     CLASE_ROJO(color = Color.Red, txt = "Rojo"),
 }
+
+enum class EstadosAuxiliares(val txt: String) {
+    AUX1(txt = "aux1"),
+    AUX2(txt = "aux2"),
+    AUX3(txt = "aux3"),
+}
+
+object Datos {
+    var numero = Int
+}

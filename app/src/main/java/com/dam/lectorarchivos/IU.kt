@@ -55,21 +55,14 @@ fun Estado(estado: Estados){
 
 @Composable
 fun Boton(viewModel: MyViewModel, enum_color: Colores) {
-    val activo = viewModel._estadoFlow.collectAsState().value
+    val estado = viewModel._estadoFlow.collectAsState().value
     Button(
-        enabled = activo.boton_activo,
-        colors = ButtonDefaults.buttonColors(enum_color.color),
+        enabled = estado.start_activo,
         onClick = {
-            Log.d("Juego", enum_color.txt + " numero: " + enum_color.ordinal)
-        },
-        shape = RoundedCornerShape(0.dp),
-        modifier = Modifier.size(150.dp).padding(15.dp)
-    ) {
-        Text(
-            text = enum_color.txt,
-            fontSize = 15.sp,
-            color = Color.Black
-        )
+            Log.d("Juego", "Empieza la partida")
+            viewModel.numeroRandom()
+        }) {
+        Text(text = "Start")
     }
 }
 
