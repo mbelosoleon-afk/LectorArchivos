@@ -16,9 +16,10 @@ import com.dam.lectorarchivos.ui.theme.LectorArchivosTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val viewModel: MyViewModel = MyViewModel()
         enableEdgeToEdge()
         setContent {
-            IU(miViewModel = MyViewModel())
+            IU(viewModel)
         }
     }
 }
